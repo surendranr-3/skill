@@ -11,10 +11,18 @@ const BASE_URL = window.location.hostname === 'localhost'
   : `http://${window.location.hostname}:5000`;
 
 // --- CREATE THE SOCKET ---
+// const socket = io(BASE_URL, {
+//     transports: ['websocket'],
+//     autoConnect: true
+// }); 
+
 const socket = io(BASE_URL, {
-    transports: ['websocket'],
-    autoConnect: true
-}); 
+    transports: ['polling', 'websocket'], // Allow polling first
+    secure: true,                         // Forces the use of WSS
+    reconnection: true,
+    reconnectionAttempts: 5,
+    reconnectionDelay: 1000,
+});
 
 export const SocketProvider = ({ children }) => {
   const { user } = useContext(AuthContext);
