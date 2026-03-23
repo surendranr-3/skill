@@ -8,7 +8,8 @@ const SocketContext = createContext();
 // --- SMART URL DETECTION ---
 const BASE_URL = window.location.hostname === 'localhost' 
   ? 'http://localhost:5000' 
-  : `http://${window.location.hostname}:5000`;
+  : 'https://skill-0bu7.onrender.com'; // Your ACTUAL Render Backend
+  // : `http://${window.location.hostname}:5000`;
 
 // --- CREATE THE SOCKET ---
 // const socket = io(BASE_URL, {
