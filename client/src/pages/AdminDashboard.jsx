@@ -5,10 +5,7 @@
 // import { useNavigate, Link } from 'react-router-dom';
 // import { toast } from 'react-toastify'; 
 
-// const BASE_URL = window.location.hostname === 'localhost' 
-//   ? 'http://localhost:5000' 
-//   : `http://${window.location.hostname}:5000`;
-
+// // --- FIXED API URL DETECTION ---
 // const Icons = {
 //   Dashboard: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>,
 //   Users: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>,
@@ -679,9 +676,11 @@ import { useSocket } from '../context/SocketContext';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify'; 
 
-const BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:5000' 
-  : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
 const Icons = {
   Dashboard: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,
@@ -1078,8 +1077,8 @@ export default function AdminDashboard() {
                 <div className="stat-icon"><span>💰</span></div>
                 <div className="stat-content">
                   <span className="stat-label">Total Revenue</span>
-                  <span className="stat-value">${formatNumber(stats.volume)}</span>
-                  <span className="stat-change positive"><Icons.TrendUp /> +12.5%</span>
+                  <span className="stat-value">{formatNumber(stats.volume)}</span>
+                  {/* <span className="stat-change positive"><Icons.TrendUp /> +12.5%</span> */}
                 </div>
               </div>
               

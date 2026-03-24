@@ -3,7 +3,7 @@
 // import { AuthContext } from '../context/AuthContext';
 // import { useNavigate, Link, useLocation } from 'react-router-dom';
 
-// const BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000' : `http://${window.location.hostname}:5000`;
+
 
 // const Icons = {
 //   Dashboard: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>,
@@ -162,7 +162,10 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000' : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend ? 'http://localhost:5000' : `http://${window.location.hostname}:5000`;
 
 const Icons = {
   Dashboard: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,
@@ -371,7 +374,7 @@ export default function AdminSessions() {
               </div>
               <div className="stat-content">
                 <span className="stat-label">Total Revenue</span>
-                <span className="stat-value">${formatNumber(stats.revenue)}</span>
+                <span className="stat-value">{formatNumber(stats.revenue)}</span>
                 <span className="stat-sub">From completed sessions</span>
               </div>
             </div>

@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 const SocketContext = createContext();
 
 // --- SMART URL DETECTION ---
-const BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:5000' 
-  : 'https://skill-0bu7.onrender.com'; // Your ACTUAL Render Backend
-  // : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
 // --- CREATE THE SOCKET ---
 // const socket = io(BASE_URL, {

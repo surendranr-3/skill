@@ -3,9 +3,8 @@
 // import { useNavigate, Link } from 'react-router-dom';
 // import axios from 'axios'; 
 
-// const BASE_URL = window.location.hostname === 'localhost' 
-//   ? 'http://localhost:5000' 
-//   : `http://${window.location.hostname}:5000`;
+// // --- FIXED API URL DETECTION ---
+
 
 // export default function Login() {
 //   const [view, setView] = useState('login'); 
@@ -283,9 +282,10 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const BASE_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:5000'
-  : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
 export default function Login() {
 

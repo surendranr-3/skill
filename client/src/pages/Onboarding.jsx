@@ -4,7 +4,7 @@
 // import { AuthContext } from '../context/AuthContext';
 // import { toast } from 'react-toastify';
 
-// const BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000' : `http://${window.location.hostname}:5000`;
+// Your ACTUAL Render Backend ? 'http://localhost:5000' : `http://${window.location.hostname}:5000`;
 
 // export default function Onboarding() {
 //   const { user, updateUser } = useContext(AuthContext);
@@ -145,7 +145,10 @@ import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 
-const BASE_URL = window.location.hostname === 'localhost' ? 'http://localhost:5000' : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
 export default function Onboarding() {
   const { user, updateUser } = useContext(AuthContext);

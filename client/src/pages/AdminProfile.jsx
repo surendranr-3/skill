@@ -4,9 +4,7 @@
 // import { useNavigate } from 'react-router-dom'; // 🚨 Added useNavigate
 // import { toast } from 'react-toastify'; 
 
-// const BASE_URL = window.location.hostname === 'localhost' 
-//   ? 'http://localhost:5000' 
-//   : `http://${window.location.hostname}:5000`;
+// // --- FIXED API URL DETECTION ---
 
 // export default function AdminProfile() {
 //   const { user, updateUser } = useContext(AuthContext);
@@ -262,9 +260,11 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify'; 
 
-const BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:5000' 
-  : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
 const Icons = {
   Dashboard: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,

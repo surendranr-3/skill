@@ -4,9 +4,11 @@ import { AuthContext } from '../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSocket } from '../context/SocketContext';
 
-const BASE_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:5000'
-  : `http://${window.location.hostname}:5000`;
+// --- FIXED API URL DETECTION ---
+// --- FIXED API URL DETECTION ---
+export const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api' 
+  : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
 export default function Dashboard({ showToast }) {
 

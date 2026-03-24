@@ -750,7 +750,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // --- Database Connection ---
-mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/skill_exchange')
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/skillsphere')
   .then(() => console.log('✅ MongoDB Connected'))
   .catch(err => console.error('❌ DB Error:', err));
 
