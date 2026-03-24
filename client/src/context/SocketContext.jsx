@@ -7,7 +7,7 @@ const SocketContext = createContext();
 
 // --- SMART URL DETECTION ---
 // --- FIXED API URL DETECTION ---
-export const API_URL = window.location.hostname === 'localhost' 
+export const BASE_URL = window.location.hostname === 'localhost' 
   ? 'http://localhost:5000/api' 
   : 'https://skill-0bu7.onrender.com/api'; // Your ACTUAL Render Backend
 
